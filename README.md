@@ -12,8 +12,7 @@ This project demonstrates API testing using Postman, providing a collection of t
 
 ## API Documentation:
 
-- https://documenter.getpostman.com/view/34581549/2sA3JNaLBp
-
+- https://documenter.getpostman.com/view/34581549/2sA3JNaLGF
 ### **Technology used:**
 
 - Postman
