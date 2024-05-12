@@ -269,3 +269,8 @@ newman run Rest_Booking_API.postman_collection.json -e Rest_Booking_API.postman_
 ```
 
 ## Newman Report Summary:
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/66f82c47-abea-403c-ac60-3c1e0cdbf7dc)
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/9349fd97-8bd2-467f-bf10-97fbd7048e34)
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/d8bb4ef9-bfb1-4112-8abe-4d899848d68a)
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/6c5cca52-b886-44c3-973a-28791cc2c081)
+
