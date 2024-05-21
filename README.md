@@ -13,6 +13,7 @@ This project demonstrates API testing using Postman, providing a collection of t
 ## API Documentation:
 
 - https://documenter.getpostman.com/view/34581549/2sA3JNaLGF
+
 ### **Technology used:**
 
 - Postman
@@ -30,7 +31,7 @@ This project demonstrates API testing using Postman, providing a collection of t
 2. Clone the repository:
 
 ```console
- git clone https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report.git
+git clone https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report.git
 ```
 
 3. Import the Postman collection:
@@ -43,11 +44,11 @@ This project demonstrates API testing using Postman, providing a collection of t
 5. Newman and Report Installation Process:
    - Newman Install Command:
    ```console
-    npm install -g newman
+   npm install -g newman
    ```
    - Newman Html Report Install Command:
    ```console
-    npm install -g newman-reporter-htmlextra
+   npm install -g newman-reporter-htmlextra
    ```
 
 ### **Usage**
@@ -67,7 +68,30 @@ This project demonstrates API testing using Postman, providing a collection of t
 
 ## Test Case Scenarios:
 
-## _**1. Create New Booking**_
+## _**1. Create A Token For Authentication.**_
+
+### Request URL: https://restful-booker.herokuapp.com/auth
+
+### Request Method: POST
+
+### Request Body:
+
+```console
+{
+    "username": "admin",
+    "password": "password123"
+}
+```
+
+### Response Body:
+
+```console
+{
+    "token": "4144e08a1549e38"
+}
+```
+
+## _**2. Create New Booking**_
 
 ### Request URL: https://restful-booker.herokuapp.com/booking/
 
@@ -76,33 +100,33 @@ This project demonstrates API testing using Postman, providing a collection of t
 ### Pre-request Script:
 
 ```console
-  var firstName = pm.variables.replaceIn('{{$randomFirstName}}');
-  pm.environment.set("FirstName", firstName);
+var firstName = pm.variables.replaceIn('{{$randomFirstName}}');
+pm.environment.set("FirstName", firstName);
 
-  var lastName = pm.variables.replaceIn('{{$randomLastName}}');
-  pm.environment.set("LastName", lastName);
+var lastName = pm.variables.replaceIn('{{$randomLastName}}');
+pm.environment.set("LastName", lastName);
 
-  var totalPrice = pm.variables.replaceIn("{{$randomInt}}");
-  pm.environment.set("TotalPrice", totalPrice);
+var totalPrice = pm.variables.replaceIn("{{$randomInt}}");
+pm.environment.set("TotalPrice", totalPrice);
 
-  var depositPaid = pm.variables.replaceIn("{{$randomBoolean}}");
-  pm.environment.set("DepositPaid", depositPaid);
+var depositPaid = pm.variables.replaceIn("{{$randomBoolean}}");
+pm.environment.set("DepositPaid", depositPaid);
 
-  const moment = require('moment');
-  const today = moment();
+const moment = require('moment');
+const today = moment();
 
-  pm.environment.set("CheckIn", today.add(1, 'd').format("YYYY-MM-DD"));
+pm.environment.set("CheckIn", today.add(1, 'd').format("YYYY-MM-DD"));
 
-  pm.environment.set("CheckOut", today.add(5, 'd').format("YYYY-MM-DD"));
+pm.environment.set("CheckOut", today.add(5, 'd').format("YYYY-MM-DD"));
 
-  var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}");
-  pm.environment.set("AdditionalNeeds", additionalNeeds);
+var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}");
+pm.environment.set("AdditionalNeeds", additionalNeeds);
 ```
 
-**Request Body:**
+### Request Body:
 
 ```console
- {
+{
     "firstname" : "{{FirstName}}",
     "lastname" : "{{LastName}}",
     "totalprice" : {{TotalPrice}},
@@ -112,13 +136,13 @@ This project demonstrates API testing using Postman, providing a collection of t
         "checkout" : "{{CheckOut}}"
     },
     "additionalneeds" : "{{AdditionalNeeds}}"
-  }
+}
 ```
 
-**Response Body:**
+### Response Body:
 
 ```console
- {
+{
     "bookingid": 3737,
     "booking": {
         "firstname": "Johnpaul",
@@ -131,10 +155,10 @@ This project demonstrates API testing using Postman, providing a collection of t
         },
         "additionalneeds": "application"
     }
-  }
+}
 ```
 
-## _**2. Get Booking Details By ID**_
+## _**3. Get Booking Details By ID**_
 
 ### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
 
@@ -143,42 +167,17 @@ This project demonstrates API testing using Postman, providing a collection of t
 ### Response Body:
 
 ```console
-  {
-      "firstname": "Johnpaul",
-      "lastname": "Mayert",
-      "totalprice": 649,
-      "depositpaid": false,
-      "bookingdates": {
-          "checkin": "2024-05-14",
-          "checkout": "2024-05-19"
-      },
-      "additionalneeds": "application"
-  }
-```
-
-## _**3. Create A Token For Authentication.**_
-
-### Request URL: https://restful-booker.herokuapp.com/auth
-
-### Request Method: POST
-
-### Pre-request Script: None
-
-### Request Body:
-
-```console
-  {
-    "username": "admin",
-    "password": "password123"
-  }
-```
-
-**Response Body:**
-
-```console
-  {
-    "token": "4144e08a1549e38"
-  }
+{
+    "firstname": "Johnpaul",
+    "lastname": "Mayert",
+    "totalprice": 649,
+    "depositpaid": false,
+    "bookingdates": {
+        "checkin": "2024-05-14",
+        "checkout": "2024-05-19"
+    },
+    "additionalneeds": "application"
+}
 ```
 
 ## _**4. Update the Booking Details**_
@@ -190,33 +189,33 @@ This project demonstrates API testing using Postman, providing a collection of t
 ### Pre-request Script:
 
 ```console
-  var firstName = pm.variables.replaceIn('{{$randomFirstName}}');
-  pm.environment.set("FirstName", firstName);
+var firstName = pm.variables.replaceIn('{{$randomFirstName}}');
+pm.environment.set("FirstName", firstName);
 
-  var lastName = pm.variables.replaceIn('{{$randomLastName}}');
-  pm.environment.set("LastName", lastName);
+var lastName = pm.variables.replaceIn('{{$randomLastName}}');
+pm.environment.set("LastName", lastName);
 
-  var totalPrice = pm.variables.replaceIn("{{$randomInt}}");
-  pm.environment.set("TotalPrice", totalPrice);
+var totalPrice = pm.variables.replaceIn("{{$randomInt}}");
+pm.environment.set("TotalPrice", totalPrice);
 
-  var depositPaid = pm.variables.replaceIn("{{$randomBoolean}}");
-  pm.environment.set("DepositPaid", depositPaid);
+var depositPaid = pm.variables.replaceIn("{{$randomBoolean}}");
+pm.environment.set("DepositPaid", depositPaid);
 
-  const moment = require('moment');
-  const today = moment();
+const moment = require('moment');
+const today = moment();
 
-  pm.environment.set("CheckIn", today.add(1, 'd').format("YYYY-MM-DD"));
+pm.environment.set("CheckIn", today.add(1, 'd').format("YYYY-MM-DD"));
 
-  pm.environment.set("CheckOut", today.add(5, 'd').format("YYYY-MM-DD"));
+pm.environment.set("CheckOut", today.add(5, 'd').format("YYYY-MM-DD"));
 
-  var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}");
-  pm.environment.set("AdditionalNeeds", additionalNeeds);
+var additionalNeeds = pm.variables.replaceIn("{{$randomNoun}}");
+pm.environment.set("AdditionalNeeds", additionalNeeds);
 ```
 
-**Request Body:**
+### Request Body:
 
 ```console
-  {
+{
     "firstname" : "{{FirstName}}",
     "lastname" : "{{LastName}}",
     "totalprice" : {{TotalPrice}},
@@ -226,13 +225,13 @@ This project demonstrates API testing using Postman, providing a collection of t
         "checkout" : "{{CheckOut}}"
     },
     "additionalneeds" : "{{AdditionalNeeds}}"
-  }
+}
 ```
 
-**Response Body:**
+### Response Body:
 
 ```console
-  {
+{
     "firstname": "Cale",
     "lastname": "Haley",
     "totalprice": 488,
@@ -242,16 +241,54 @@ This project demonstrates API testing using Postman, providing a collection of t
         "checkout": "2024-05-19"
     },
     "additionalneeds": "feed"
-  }
+}
 ```
 
-## _**5. Delete Booking Record**_
+## _**5. Check After The Update**_
+
+### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
+
+### Request Method: GET
+
+### Response Body:
+
+```console
+{
+    "firstname": "Freddy",
+    "lastname": "Wolf",
+    "totalprice": 781,
+    "depositpaid": false,
+    "bookingdates": {
+        "checkin": "2024-05-23",
+        "checkout": "2024-05-28"
+    },
+    "additionalneeds": "port"
+}
+```
+
+## _**6. Delete Booking Record**_
 
 ### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
 
 ### Request Method: DELETE
 
-### Response Body: None
+### Response Body:
+
+```console
+Created
+```
+
+## _**7. Check After The Delete**_
+
+### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
+
+### Request Method: DELETE
+
+### Response Body:
+
+```console
+Not Found
+```
 
 ## Run Command:
 
@@ -268,8 +305,8 @@ newman run Rest_Booking_API.postman_collection.json -e Rest_Booking_API.postman_
 ```
 
 ## Newman Report Summary:
+
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/66f82c47-abea-403c-ac60-3c1e0cdbf7dc)
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/9349fd97-8bd2-467f-bf10-97fbd7048e34)
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/d8bb4ef9-bfb1-4112-8abe-4d899848d68a)
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/6c5cca52-b886-44c3-973a-28791cc2c081)
-
