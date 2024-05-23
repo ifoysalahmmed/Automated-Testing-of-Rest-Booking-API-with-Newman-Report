@@ -91,7 +91,7 @@ git clone https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API
 }
 ```
 
-## _**2. Create New Booking**_
+## _**2. Create A New Booking**_
 
 ### Request URL: https://restful-booker.herokuapp.com/booking/
 
@@ -143,22 +143,22 @@ pm.environment.set("AdditionalNeeds", additionalNeeds);
 
 ```console
 {
-    "bookingid": 3737,
+    "bookingid": 2032,
     "booking": {
-        "firstname": "Johnpaul",
-        "lastname": "Mayert",
-        "totalprice": 649,
-        "depositpaid": false,
+        "firstname": "Newton",
+        "lastname": "Bailey",
+        "totalprice": 196,
+        "depositpaid": true,
         "bookingdates": {
-            "checkin": "2024-05-14",
-            "checkout": "2024-05-19"
+        "checkin": "2024-05-24",
+        "checkout": "2024-05-29"
         },
-        "additionalneeds": "application"
+        "additionalneeds": "protocol"
     }
 }
 ```
 
-## _**3. Get Booking Details By ID**_
+## _**3. Get The Booking Details By ID**_
 
 ### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
 
@@ -168,19 +168,19 @@ pm.environment.set("AdditionalNeeds", additionalNeeds);
 
 ```console
 {
-    "firstname": "Johnpaul",
-    "lastname": "Mayert",
-    "totalprice": 649,
-    "depositpaid": false,
+    "firstname": "Newton",
+    "lastname": "Bailey",
+    "totalprice": 196,
+    "depositpaid": true,
     "bookingdates": {
-        "checkin": "2024-05-14",
-        "checkout": "2024-05-19"
+        "checkin": "2024-05-24",
+        "checkout": "2024-05-29"
     },
-    "additionalneeds": "application"
+    "additionalneeds": "protocol"
 }
 ```
 
-## _**4. Update the Booking Details**_
+## _**4. Update The Booking Details**_
 
 ### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
 
@@ -232,15 +232,15 @@ pm.environment.set("AdditionalNeeds", additionalNeeds);
 
 ```console
 {
-    "firstname": "Cale",
-    "lastname": "Haley",
-    "totalprice": 488,
-    "depositpaid": false,
+    "firstname": "Sandy",
+    "lastname": "Schamberger",
+    "totalprice": 946,
+    "depositpaid": true,
     "bookingdates": {
-        "checkin": "2024-05-14",
-        "checkout": "2024-05-19"
+        "checkin": "2024-05-24",
+        "checkout": "2024-05-29"
     },
-    "additionalneeds": "feed"
+    "additionalneeds": "hard drive"
 }
 ```
 
@@ -254,15 +254,74 @@ pm.environment.set("AdditionalNeeds", additionalNeeds);
 
 ```console
 {
-    "firstname": "Freddy",
-    "lastname": "Wolf",
-    "totalprice": 781,
-    "depositpaid": false,
+    "firstname": "Sandy",
+    "lastname": "Schamberger",
+    "totalprice": 946,
+    "depositpaid": true,
     "bookingdates": {
-        "checkin": "2024-05-23",
-        "checkout": "2024-05-28"
+        "checkin": "2024-05-24",
+        "checkout": "2024-05-29"
     },
-    "additionalneeds": "port"
+    "additionalneeds": "hard drive"
+}
+```
+
+## _**6. Update The First Name of The Booking Details**_
+
+### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
+
+### Request Method: PATCH
+
+### Pre-request Script:
+
+```console
+var firstName = pm.variables.replaceIn('{{$randomFirstName}}');
+pm.environment.set("FirstName", firstName);
+```
+
+### Request Body:
+
+```console
+{
+    "firstname" : "{{FirstName}}",
+}
+```
+
+### Response Body:
+
+```console
+{
+    "firstname": "Dashawn",
+    "lastname": "Schamberger",
+    "totalprice": 946,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2024-05-24",
+        "checkout": "2024-05-29"
+    },
+    "additionalneeds": "hard drive"
+}
+```
+
+## _**7. Check After The First Name Update**_
+
+### Request URL: https://restful-booker.herokuapp.com/booking/BookingID
+
+### Request Method: GET
+
+### Response Body:
+
+```console
+{
+    "firstname": "Dashawn",
+    "lastname": "Schamberger",
+    "totalprice": 946,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2024-05-24",
+        "checkout": "2024-05-29"
+    },
+    "additionalneeds": "hard drive"
 }
 ```
 
@@ -305,11 +364,8 @@ newman run Rest_Booking_API.postman_collection.json -e Rest_Booking_API.postman_
 ```
 
 ## Newman Report Summary:
+
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/8711a454-9305-470b-b3e7-980f4235a023)
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/4a4e16a0-634c-4524-ae58-ec51ce7c6725)
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/2585795b-3946-475a-8835-81db0b22f3e5)
 ![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/0178df65-1b09-41a7-9dbb-67863ec4a765)
-
-
-
-
