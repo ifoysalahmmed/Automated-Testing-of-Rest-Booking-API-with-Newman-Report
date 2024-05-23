@@ -305,8 +305,11 @@ newman run Rest_Booking_API.postman_collection.json -e Rest_Booking_API.postman_
 ```
 
 ## Newman Report Summary:
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/8711a454-9305-470b-b3e7-980f4235a023)
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/4a4e16a0-634c-4524-ae58-ec51ce7c6725)
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/2585795b-3946-475a-8835-81db0b22f3e5)
+![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/0178df65-1b09-41a7-9dbb-67863ec4a765)
 
-![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/66f82c47-abea-403c-ac60-3c1e0cdbf7dc)
-![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/9349fd97-8bd2-467f-bf10-97fbd7048e34)
-![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/d8bb4ef9-bfb1-4112-8abe-4d899848d68a)
-![Newman Report Summary](https://github.com/ifoysalahmmed/Automated-Testing-of-Rest-Booking-API-with-Newman-Report/assets/68318362/6c5cca52-b886-44c3-973a-28791cc2c081)
+
+
+
